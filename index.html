@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trinity Beacon of Hope (TRIBEHOPE) - Empowering Communities in Cameroon</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        :root {
+            --primary-color: #2c5aa0;
+            --secondary-color: #f39c12;
+            --accent-color: #e74c3c;
+            --text-light: #ecf0f1;
+            --gradient: linear-gradient(135deg, #2c5aa0 0%, #34495e 100%);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        nav {
+            background: var(--gradient);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            color: var(--text-light);
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+            background: var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-menu a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+        
+        .nav-menu a:hover {
+            background: rgba(255,255,255,0.1);
+            color: var(--secondary-color);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(44, 90, 160, 0.8), rgba(52, 73, 94, 0.8)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="hands" patternUnits="userSpaceOnUse" width="100" height="100"><circle cx="50" cy="50" r="30" fill="%23f39c12" opacity="0.1"/></pattern></defs><rect width="1200" height="600" fill="url(%23hands)"/></svg>');
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: var(--text-light);
+            text-align: center;
+            padding-top: 80px;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s;
+            margin: 0 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn:hover {
+            background: #e67e22;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--secondary-color);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--secondary-color);
+        }
+        
+        /* Section Styles */
+        .section {
+            padding: 5rem 0;
+        }
+        
+        .section:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+        }
+        
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+        
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            text-align: center;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1rem;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+        
+        /* News Section */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .news-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .news-image {
+            width: 100%;
+            height: 200px;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+        
+        .news-content {
+            padding: 1.5rem;
+        }
+        
+        .news-date {
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Partners Section */
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+        
+        .partner-logo {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 1rem;
+            background: var(--gradient);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        
+        /* Contact Form */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--gradient);
+            color: var(--text-light);
+            padding: 3rem 0 1rem;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+        
+        /* Statistics */
+        .stats {
+            background: var(--gradient);
+            color: var(--text-light);
+            padding: 3rem 0;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+        
+        .stat-item h3 {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+        
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+        }
+        
+        .close {
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #aaa;
+        }
+        
+        .close:hover {
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <div class="logo-icon">🤝</div>
+                <span>TRIBEHOPE</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#partners">Partners</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" onclick="openModal('donateModal')">Donate</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Trinity Beacon of Hope</h1>
+                <p>Empowering communities, fighting gender-based violence, and providing hope to the underprivileged in Cameroon through faith, hope, health, development, peace, and justice.</p>
+                <a href="#about" class="btn">Learn More</a>
+                <a href="#" onclick="openModal('volunteerModal')" class="btn btn-secondary">Get Involved</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>2,500+</h3>
+                    <p>People Assisted</p>
+                </div>
+                <div class="stat-item">
+                    <h3>15</h3>
+                    <p>Partner Organizations</p>
+                </div>
+                <div class="stat-item">
+                    <h3>3</h3>
+                    <p>Years of Service</p>
+                </div>
+                <div class="stat-item">
+                    <h3>8</h3>
+                    <p>Active Programs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Trinity Beacon of Hope</h2>
+            <div class="about-grid">
+                <div class="about-image">
+                    ⚖️
+                </div>
+                <div>
+                    <h3>Our Mission</h3>
+                    <p>Trinity Beacon of Hope (TRIBEHOPE) is a non-governmental, non-denominational, non-tribal, and non-political association dedicated to serving the social, economic, and civic needs of communities across Cameroon.</p>
+                    
+                    <h3>Our Values</h3>
+                    <p><strong>Faith • Hope • Health • Development • Peace • Justice</strong></p>
+                    
+                    <h3>Established</h3>
+                    <p>Founded in 2022 and officially registered in 2023, TRIBEHOPE has been actively providing voluntary assistance to vulnerable populations throughout Cameroon, with our headquarters in Limbe, South West Region.</p>
+                    
+                    <h3>Our Symbol</h3>
+                    <p>Our logo represents the Symbol of Balance and closed hands to symbolize peace, reflecting our commitment to justice and unity in our communities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🛡️</div>
+                    <h3>Gender-Based Violence Support</h3>
+                    <p>Comprehensive support services for survivors of gender-based violence, including counseling, legal assistance, and safe shelter referrals.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">👩‍⚖️</div>
+                    <h3>Women's Rights Advocacy</h3>
+                    <p>Fighting discrimination against women and girls, promoting gender equality in civil, traditional, business, and political domains.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">💡</div>
+                    <h3>Skills Empowerment Training</h3>
+                    <p>Providing gainful skills training and self-sufficiency projects to empower women, youth, and vulnerable populations.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🏥</div>
+                    <h3>Health & Wellness</h3>
+                    <p>Health interventions, awareness campaigns, and assistance for disabled persons and children in need of medical care.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">👴</div>
+                    <h3>Elderly Care Services</h3>
+                    <p>Promoting the rights and well-being of the elderly, fighting against abandonment, and establishing care facilities.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🌍</div>
+                    <h3>Environmental Conservation</h3>
+                    <p>Promoting nature conservation, sustainable agriculture, and environmental awareness in rural and urban communities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" class="section">
+        <div class="container">
+            <h2 class="section-title">Recent Activities & News</h2>
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="news-image">📢</div>
+                    <div class="news-content">
+                        <div class="news-date">September 15, 2025</div>
+                        <h3>Gender-Based Violence Awareness Campaign in Buea</h3>
+                        <p>TRIBEHOPE successfully conducted a three-day awareness campaign in Buea, reaching over 500 community members with information about preventing gender-based violence and supporting survivors.</p>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-image">🤝</div>
+                    <div class="news-content">
+                        <div class="news-date">September 8, 2025</div>
+                        <h3>Partnership Signed with FIDA Cameroon</h3>
+                        <p>TRIBEHOPE formalized a strategic partnership with FIDA Cameroon to enhance legal support services for women and strengthen advocacy efforts across the South West Region.</p>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-image">💼</div>
+                    <div class="news-content">
+                        <div class="news-date">August 28, 2025</div>
+                        <h3>Skills Training Program Graduates 45 Women</h3>
+                        <p>Our vocational training program in tailoring and small business management celebrated its latest graduation of 45 women from various communities in Fako Division.</p>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-image">🏥</div>
+                    <div class="news-content">
+                        <div class="news-date">August 20, 2025</div>
+                        <h3>Medical Outreach in Rural Villages</h3>
+                        <p>TRIBEHOPE organized a medical outreach program in remote villages, providing free health screenings and medications to over 300 elderly residents and children.</p>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-image">🎓</div>
+                    <div class="news-content">
+                        <div class="news-date">August 10, 2025</div>
+                        <h3>Educational Workshop on Women's Rights</h3>
+                        <p>In collaboration with the Ministry of Women Affairs, we conducted an educational workshop on women's legal rights, attended by 200 women from across the South West Region.</p>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-image">🌱</div>
+                    <div class="news-content">
+                        <div class="news-date">July 30, 2025</div>
+                        <h3>Environmental Conservation Project Launched</h3>
+                        <p>TRIBEHOPE launched a tree planting initiative in collaboration with local communities, aiming to plant 1,000 trees across deforested areas in the South West Region.</p>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-image">👨‍👩‍👧‍👦</div>
+                    <div class="news-content">
+                        <div class="news-date">July 15, 2025</div>
+                        <h3>Family Reunification Program Success</h3>
+                        <p>Our displacement assistance program successfully reunited 25 families who were separated due to ongoing conflicts in the North West and South West regions.</p>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-image">⚖️</div>
+                    <div class="news-content">
+                        <div class="news-date">July 5, 2025</div>
+                        <h3>Legal Aid Clinic Established</h3>
+                        <p>With support from specialized legal experts, TRIBEHOPE opened its first legal aid clinic in Limbe, offering free legal consultation services to vulnerable community members.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section id="partners" class="section">
+        <div class="container">
+            <h2 class="section-title">Our Partners</h2>
+            <div class="partners-grid">
+                <div class="partner-item">
+                    <div class="partner-logo">FIDA</div>
+                    <h4>FIDA Cameroon</h4>
+                    <p>International Federation of Women Lawyers</p>
+                </div>
+                
+                <div class="partner-item">
+                    <div class="partner-logo">MINPROFF</div>
+                    <h4>Ministry of Women Affairs</h4>
+                    <p>Government of Cameroon</p>
+                </div>
+                
+                <div class="partner-item">
+                    <div class="partner-logo">CERAC</div>
+                    <h4>CERAC</h4>
+                    <p>Circle of Friends of Cameroon</p>
+                </div>
+                
+                <div class="partner-item">
+                    <div class="partner-logo">UN</div>
+                    <h4>UN Women</h4>
+                    <p>United Nations Entity</p>
+                </div>
+                
+                <div class="partner-item">
+                    <div class="partner-logo">IOM</div>
+                    <h4>IOM</h4>
+                    <p>International Organization for Migration</p>
+                </div>
+                
+                <div class="partner-item">
+                    <div class="partner-logo">UNDP</div>
+                    <h4>UNDP</h4>
+                    <p>United Nations Development Programme</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-grid">
+                <div>
+                    <h3>Get in Touch</h3>
+                    <p><strong>Address:</strong> N2 Espoir Road, Limbe<br>P.O. Box 312, Limbe<br>South West Region, Cameroon</p>
+                    
+                    <p><strong>Phone:</strong><br>+237 677 052 126<br>+237 676 213 565</p>
+                    
+                    <p><strong>Email:</strong> info@tribehope.org</p>
+                    
+                    <h4>Board Leadership</h4>
+                    <p><strong>Chairperson:</strong> Barrister Ebua Gladys N<br>
+                    <strong>Vice Chairman:</strong> Dr Amuam Andrew Beng<br>
+                    <strong>Treasurer:</strong> Amuam Beng Junior</p>
+                </div>
+                
+                <div>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Trinity Beacon of Hope</h3>
+                    <p>Empowering communities through faith, hope, health, development, peace, and justice.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <p><a href="#about" style="color: var(--text-light);">About Us</a></p>
+                    <p><a href="#services" style="color: var(--text-light);">Our Services</a></p>
+                    <p><a href="#news" style="color: var(--text-light);">News & Updates</a></p>
+                    <p><a href="#contact" style="color: var(--text-light);">Contact</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Get Involved</h3>
+                    <p><a href="#" onclick="openModal('volunteerModal')" style="color: var(--text-light);">Volunteer</a></p>
+                    <p><a href="#" onclick="openModal('donateModal')" style="color: var(--text-light);">Donate</a></p>
+                    <p><a href="#" onclick="openModal('partnerModal')" style="color: var(--text-light);">Partnership</a></p>
+                </div>
+            </div>
+            
+            <hr style="margin: 2rem 0; border: 1px solid rgba(255,255,255,0.1);">
+            
+            <p>&copy; 2025 Trinity Beacon of Hope (TRIBEHOPE). All rights reserved. | Registered under Law No. 90/53 of 19 December 1990</p>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="donateModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('donateModal')">&times;</span>
+            <h2>Support Our Mission</h2>
+            <p>Your donation helps us continue our vital work supporting vulnerable communities across Cameroon.</p>
+            
+            <h3>Membership Fees:</h3>
+            <p><strong>Registration Fee:</strong> 10,000 FCFA (one-time)<br>
+            <strong>Annual Subscription:</strong> 30,000 FCFA</p>
+            
+            <h3>Bank Details:</h3>
+            <p><strong>Account Name:</strong> Trinity Beacon of Hope<br>
+            <strong>Bank:</strong> [Bank Details Available Upon Request]</p>
+            
+            <p>For more information on donations and membership, please contact us directly.</p>
+        </div>
+    </div>
+
+    <div id="volunteerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('volunteerModal')">&times;</span>
+            <h2>Volunteer With Us</h2>
+            <p>Join our team of dedicated volunteers making a difference in Cameroon.</p>
+            
+            <h3>Volunteer Opportunities:</h3>
+            <ul>
+                <li>Community Outreach Programs</li>
+                <li>Legal Aid Support</li>
+                <li>Health Awareness Campaigns</li>
+                <li>Skills Training Facilitation</li>
+                <li>Environmental Conservation Projects</li>
+                <li>Event Organization & Management</li>
+            </ul>
+            
+            <p>To volunteer, please contact us at +237 677 052 126 or email info@tribehope.org</p>
+        </div>
+    </div>
+
+    <div id="partnerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('partnerModal')">&times;</span>
+            <h2>Partnership Opportunities</h2>
+            <p>We welcome partnerships with organizations sharing our vision for community empowerment and social justice.</p>
+            
+            <h3>Partnership Areas:</h3>
+            <ul>
+                <li>Funding and Resource Support</li>
+                <li>Technical Expertise Sharing</li>
+                <li>Joint Program Implementation</li>
+                <li>Advocacy and Policy Development</li>
+                <li>Research and Documentation</li>
+            </ul>
+            
+            <p>Contact our Board Chairperson, Barrister Ebua Gladys N, to explore partnership opportunities.</p>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Modal functions
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        }
+
+        // Contact form handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Simulate form submission
+            alert('Thank you for your message! We will get back to you within 24 hours.');
+            this.reset();
+        });
+
+        // Animated counters for statistics
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-item h3');
+            
+            counters.forEach(counter => {
+                const target = parseInt(counter.textContent.replace(/[^0-9]/g, ''));
+                const increment = target / 50;
+                let current = 0;
+                
+                const updateCounter = () => {
+                    if (current < target) {
+                        current += increment;
+                        counter.textContent = Math.ceil(current).toLocaleString() + (counter.textContent.includes('+') ? '+' : '');
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target.toLocaleString() + (counter.textContent.includes('+') ? '+' : '');
+                    }
+                };
+                
+                updateCounter();
+            });
+        }
+
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    
+                    if (entry.target.classList.contains('stats')) {
+                        animateCounters();
+                    }
+                }
+            });
+        });
+
+        // Observe sections for animations
+        document.querySelectorAll('.section, .stats').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(50px)';
+            section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(section);
+        });
+
+        // Emergency contact feature
+        function showEmergencyContact() {
+            const emergencyInfo = `
+                🚨 EMERGENCY CONTACT INFORMATION 🚨
+                
+                24/7 Support Hotline: +237 677 052 126
+                
+                For immediate assistance with:
+                • Gender-based violence
+                • Domestic abuse
+                • Legal emergencies
+                • Medical emergencies
+                
+                You are not alone. Help is available.
+            `;
+            alert(emergencyInfo);
+        }
+
+        // Add emergency button to navigation
+        const nav = document.querySelector('.nav-menu');
+        const emergencyBtn = document.createElement('li');
+        emergencyBtn.innerHTML = '<a href="#" onclick="showEmergencyContact()" style="background: #e74c3c; border-radius: 20px;">🚨 Emergency</a>';
+        nav.appendChild(emergencyBtn);
+
+        // Mobile menu toggle (simplified)
+        function toggleMobileMenu() {
+            const navMenu = document.querySelector('.nav-menu');
+            navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        // Add mobile menu button for screens < 768px
+        if (window.innerWidth <= 768) {
+            const mobileBtn = document.createElement('button');
+            mobileBtn.innerHTML = '☰';
+            mobileBtn.style.cssText = 'background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer;';
+            mobileBtn.onclick = toggleMobileMenu;
+            document.querySelector('nav .container').appendChild(mobileBtn);
+        }
+
+        // Auto-scroll news ticker (optional enhancement)
+        let newsIndex = 0;
+        const newsCards = document.querySelectorAll('.news-card');
+        
+        function highlightLatestNews() {
+            newsCards.forEach((card, index) => {
+                if (index === 0) { // Latest news
+                    card.style.border = '3px solid var(--secondary-color)';
+                    card.style.boxShadow = '0 8px 25px rgba(243, 156, 18, 0.3)';
+                }
+            });
+        }
+
+        // Initialize highlights
+        setTimeout(highlightLatestNews, 1000);
+
+        // Add typing effect to hero text
+        function typeWriter(element, text, speed = 50) {
+            let i = 0;
+            element.innerHTML = '';
+            
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        // Apply typing effect to hero subtitle
+        window.addEventListener('load', () => {
+            const heroSubtitle = document.querySelector('.hero-content p');
+            const originalText = heroSubtitle.textContent;
+            setTimeout(() => {
+                typeWriter(heroSubtitle, originalText, 30);
+            }, 1000);
+        });
+
+        // Add floating action button for quick contact
+        const fab = document.createElement('div');
+        fab.innerHTML = '💬';
+        fab.style.cssText = `
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            z-index: 1500;
+            transition: transform 0.3s;
+        `;
+        
+        fab.onmouseover = () => fab.style.transform = 'scale(1.1)';
+        fab.onmouseout = () => fab.style.transform = 'scale(1)';
+        fab.onclick = () => {
+            document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
+        };
+        
+        document.body.appendChild(fab);
+
+        // Add success stories modal
+        const successStoriesHTML = `
+            <div id="successModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal('successModal')">&times;</span>
+                    <h2>Success Stories</h2>
+                    
+                    <div style="margin-bottom: 2rem;">
+                        <h3>Marie's Journey to Independence</h3>
+                        <p><em>"TRIBEHOPE's skills training program changed my life. I learned tailoring and now run my own business, supporting my three children independently."</em> - Marie, Buea</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 2rem;">
+                        <h3>Legal Victory for Women's Rights</h3>
+                        <p>With our legal aid support, 15 women successfully challenged discriminatory inheritance practices in traditional courts, setting precedents for future cases.</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 2rem;">
+                        <h3>Community Transformation</h3>
+                        <p>Our environmental conservation project in Muyuka has planted over 500 trees, restored degraded land, and provided sustainable livelihoods for 40 families.</p>
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        document.body.insertAdjacentHTML('beforeend', successStoriesHTML);
+
+        // Add success stories link to navigation
+        const successBtn = document.createElement('li');
+        successBtn.innerHTML = '<a href="#" onclick="openModal(\'successModal\')">Success Stories</a>';
+        nav.insertBefore(successBtn, nav.children[nav.children.length - 2]);
+
+        console.log('TRIBEHOPE website loaded successfully! 🤝');
+    </script>
+</body>
+</html>
